@@ -21,16 +21,17 @@ const Sidebar = () => {
                         </p>
                     </div>
                     <hr/>
-                    <div className={classes.sidebarTop_SecTwo}>
-                        <div className={classes.profileViews}>
-                            <span className={classes.label}>Who viewed your profile</span>
-                            <span className={classes.amount}>1142</span>
+                    <div className={classes.sidebarTop__SecTwo}>
+                        <div className={classes.stat}>
+                            <p>Who viewed your profile</p>
+                            <p className={classes.amount}>1142</p>
                         </div>
-                        <div className={classes.postViews}>
-                            <span className={classes.label}>Views of your posts</span>
-                            <span className={classes.amount}>4200</span>
+                        <div className={classes.stat}>
+                            <p>Views of your posts</p>
+                            <p className={classes.amount}>4200</p>
                         </div>
                     </div>
+                    <hr/>
                 </div>
             </Card>
         </div>

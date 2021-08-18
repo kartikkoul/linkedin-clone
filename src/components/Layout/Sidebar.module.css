@@ -6,7 +6,7 @@
 
 .sidebar{
     display: flex;
-    width: 19%;
+    flex:0.2;
     margin-top: 2.8rem;
     overflow: hidden;
 }
@@ -52,10 +52,31 @@
 
 
 .sidebarTop__SecTwo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
 }
 
-.sidebarTop__SecTwo .profileViews{
+.sidebarTop__SecTwo .stat{
     display: flex;
-    font-size: 14px;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.sidebarTop__SecTwo .stat p{
+    margin-top: 0px;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(112, 112, 112);
+}
+
+.sidebarTop__SecTwo .stat .amount{
+    color: rgb(59, 59, 252);
+    font-weight: 600;
+}
+
+.sidebar hr{
+    border: 0px;
+    border-bottom: 0.001cm solid rgba(179, 179, 179, 0.384);
 }
