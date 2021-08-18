@@ -1,10 +1,12 @@
 .sidebarCard{
     border-radius: 6px;
+    box-shadow: 0px 0px 0px 0px;
+    width: 100%;
 }
 
 .sidebar{
     display: flex;
-    width: 230px;
+    width: 19%;
     margin-top: 2.8rem;
     overflow: hidden;
 }
@@ -22,17 +24,29 @@
 }
 
 .sidebarTop .sidebarTop__SecOne .banner{
-    height: 40px;
+    height: 30px;
+    width: 100%;
 }
 
 .sidebarTop .sidebarTop__SecOne .banner>img{
-    height: 80px;
-    width: 260px;
+    height: 50px;
+    width: 100%;
     object-fit:cover;
 }
 
 .sidebarTop__SecOne .avatar{
-    width: 80px !important;
-    height:80px !important;
+    width: 70px !important;
+    height:70px !important;
+    object-fit: cover;
     border: 3px solid #fff;
+}
+
+.sidebarTop__SecOne .name{
+    margin-top: 6px;
+}
+
+.sidebarTop__SecOne .headline{
+    margin-top: -12px;
+    font-size: 12px;
+    color: rgb(126, 126, 126);
 }

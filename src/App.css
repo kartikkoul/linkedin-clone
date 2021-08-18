@@ -1,8 +1,11 @@
 .App{
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .AppInner{
+  display: flex;
+  flex-direction: row;
   width: 86%;
 }

@@ -15,6 +15,10 @@ const Sidebar = () => {
                             <img src={banner} alt="" srcset="" />
                         </div>
                         <Avatar src={avatar} className={classes.avatar}/>
+                        <h4 className={classes.name}>Kartik Koul</h4>
+                        <p className={classes.headline}>
+                            Software Developer
+                        </p>
                     </div>
                 </div>
             </Card>
