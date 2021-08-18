@@ -2,4 +2,35 @@
     background: #fff;
     height: 54px;
     width: 100%;
+    top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+}
+
+.header__left .logo{
+    height: 40px;
+    object-fit: contain;
+}
+
+.header__left{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header__search{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    color: gray;
+    border-radius: 6px;
+    height: 32px;
+    background-color: rgba(197, 197, 252, 0.384);
+}
+
+.header__search input{
+    outline: none;
+    border:none;
+    background: none;
 }
