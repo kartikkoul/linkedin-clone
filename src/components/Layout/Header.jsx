@@ -1,7 +1,8 @@
 import React from 'react'
 import classes from './Header.module.css'
-import { Search } from '@material-ui/icons'
+import { BusinessCenter, Home, Notifications, Search, SupervisorAccount, Textsms } from '@material-ui/icons'
 import logo from '../../assets/images/LinkedIn-Logo.png'
+import HeaderOption from './HeaderOption'
 
 const Header = () => {
     return (
@@ -15,7 +16,12 @@ const Header = () => {
             </div>
 
             <div className={classes.header__right}>
-
+                <HeaderOption Icon={Home} title="Home"/>
+                <HeaderOption Icon={SupervisorAccount} title="My Network"/>
+                <HeaderOption Icon={BusinessCenter} title="Jobs"/>
+                <HeaderOption Icon={Textsms} title="Messaging"/>
+                <HeaderOption Icon={Notifications} title="Notifications"/>
+                
             </div>
         </div>
     )

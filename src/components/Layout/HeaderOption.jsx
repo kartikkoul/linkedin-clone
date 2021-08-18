@@ -1,11 +1,11 @@
-import { Icon } from '@material-ui/core'
+import classes from './HeaderOption.module.css'
 import React from 'react'
 
 const HeaderOption = (props) => {
     return (
         <div className={classes.headerOption}>
-            {props.Icon && <Icon className="headerOption__icon"/>}
-            <h3>{props.title}</h3>
+            {props.Icon && <props.Icon className="headerOption__icon"/>}
+            <p>{props.title}</p>
         </div>
     )
 }
