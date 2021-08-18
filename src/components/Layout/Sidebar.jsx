@@ -20,6 +20,17 @@ const Sidebar = () => {
                             Software Developer
                         </p>
                     </div>
+                    <hr/>
+                    <div className={classes.sidebarTop_SecTwo}>
+                        <div className={classes.profileViews}>
+                            <span className={classes.label}>Who viewed your profile</span>
+                            <span className={classes.amount}>1142</span>
+                        </div>
+                        <div className={classes.postViews}>
+                            <span className={classes.label}>Views of your posts</span>
+                            <span className={classes.amount}>4200</span>
+                        </div>
+                    </div>
                 </div>
             </Card>
         </div>
