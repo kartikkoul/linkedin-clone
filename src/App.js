@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import Layout from './components/Layout';
+import Header from './components/Layout/Header';
 
 function App() {
   return (
-    <Layout>
-      <h1>Journey to $150k+/year 🚀💲</h1>
-    </Layout>
+    <div className="App">
+      <Header/>
+      <h1>Journey to $150k+/year</h1>
+    </div>
   );
 }
 
