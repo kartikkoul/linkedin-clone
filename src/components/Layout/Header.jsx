@@ -3,6 +3,7 @@ import classes from './Header.module.css'
 import { BusinessCenter, Home, Notifications, Search, SupervisorAccount, Textsms } from '@material-ui/icons'
 import logo from '../../assets/images/LinkedIn-Logo.png'
 import HeaderOption from './HeaderOption'
+import { Avatar } from '@material-ui/core'
 
 const Header = () => {
     return (
@@ -21,6 +22,7 @@ const Header = () => {
                 <HeaderOption Icon={BusinessCenter} title="Jobs"/>
                 <HeaderOption Icon={Textsms} title="Messaging"/>
                 <HeaderOption Icon={Notifications} title="Notifications"/>
+                <HeaderOption Avatar={Avatar} title="Me"/>
                 
             </div>
         </div>

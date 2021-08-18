@@ -13,3 +13,8 @@
 .headerOption:hover{
     color: rgb(56, 56, 56);
 }
+
+.headerOption__avatar{
+    height: 2px;
+    width: 2px;
+}
