@@ -1,0 +1,38 @@
+.sidebarCard{
+    border-radius: 6px;
+}
+
+.sidebar{
+    display: flex;
+    width: 230px;
+    margin-top: 2.8rem;
+    overflow: hidden;
+}
+
+.sidebarTop{
+    display: flex;
+    width: 100%;
+}
+
+.sidebarTop__SecOne{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.sidebarTop .sidebarTop__SecOne .banner{
+    height: 40px;
+}
+
+.sidebarTop .sidebarTop__SecOne .banner>img{
+    height: 80px;
+    width: 260px;
+    object-fit:cover;
+}
+
+.sidebarTop__SecOne .avatar{
+    width: 80px !important;
+    height:80px !important;
+    border: 3px solid #fff;
+}

@@ -1,13 +1,18 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Layout/Header';
+import Layout from './components/Layout/Layout';
+import Sidebar from './components/Layout/Sidebar'
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <h1>Journey to $150k+/year</h1>
-    </div>
+    <Layout>
+      <div className="App">
+        <div className="AppInner">
+          <Sidebar/>
+        </div>
+      </div>
+    </Layout>
   );
 }
 

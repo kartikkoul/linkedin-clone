@@ -3,7 +3,7 @@ import classes from './Header.module.css'
 import { BusinessCenter, Home, Notifications, Search, SupervisorAccount, Textsms } from '@material-ui/icons'
 import logo from '../../assets/images/LinkedIn-Logo.png'
 import HeaderOption from './HeaderOption'
-import { Avatar } from '@material-ui/core'
+
 
 const Header = () => {
     return (
