@@ -17,13 +17,14 @@ const Header = () => {
             </div>
 
             <div className={classes.header__right}>
-                <HeaderOption Icon={Home} title="Home"/>
-                <HeaderOption Icon={SupervisorAccount} title="My Network"/>
-                <HeaderOption Icon={BusinessCenter} title="Jobs"/>
-                <HeaderOption Icon={Textsms} title="Messaging"/>
-                <HeaderOption Icon={Notifications} title="Notifications"/>
-                <HeaderOption Avatar={Avatar} title="Me"/>
-                
+                <div className={classes.header__right__headerOptions}>
+                    <HeaderOption Icon={Home} title="Home"/>
+                    <HeaderOption Icon={SupervisorAccount} title="My Network"/>
+                    <HeaderOption Icon={BusinessCenter} title="Jobs"/>
+                    <HeaderOption Icon={Textsms} title="Messaging"/>
+                    <HeaderOption Icon={Notifications} title="Notifications"/>
+                    <HeaderOption Avatar="avatar" title="Me"/>
+                </div>                
             </div>
         </div>
     )
