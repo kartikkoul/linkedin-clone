@@ -10,7 +10,7 @@ const Header = () => {
                 <img src={logo} className={classes.logo} />
                 <div className={classes.header__search}>
                     <Search/>
-                    <input type="text"/>
+                    <input type="text" placeholder="Search for jobs, skills and companies..."/>
                 </div>
             </div>
 

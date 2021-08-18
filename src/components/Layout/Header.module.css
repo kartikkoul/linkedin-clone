@@ -9,7 +9,7 @@
 }
 
 .header__left .logo{
-    height: 40px;
+    height: 36px;
     object-fit: contain;
 }
 
@@ -17,19 +17,26 @@
     display: flex;
     align-items: center;
     height: 100%;
+    margin-left: 6px;
 }
 
 .header__search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 10px;
     display: flex;
     align-items: center;
     color: gray;
     border-radius: 6px;
-    height: 32px;
-    background-color: rgba(197, 197, 252, 0.384);
+    height: 36px;
+    width: 18rem;
+    background-color: #eef3f8;
 }
 
 .header__search input{
+    width: 80%;
+    margin-left: 6px;
     outline: none;
     border:none;
     background: none;
