@@ -22,6 +22,7 @@ const FeedInputContainer = () => {
             photoUrl:"",
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
+        postInputRef.current.value=""
     }
 
     return (
