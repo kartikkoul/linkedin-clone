@@ -1,0 +1,33 @@
+.sidebarList__list{
+    padding:0;
+}
+
+.sidebarList__list>li{
+    display:flex;
+    list-style: none;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.sidebarList__list>li:hover{
+    background-color: #c2c2c29f;
+    color: black;
+}
+
+.sidebarList__list>li>p{
+    font-size: 12px;
+    color: rgb(60, 60, 60);
+    margin: 2px;
+}
+
+.sidebarList__list>li .hashtag{
+    font-weight: bolder;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 6px;
+    color: rgb(60, 60, 60);
+}
+

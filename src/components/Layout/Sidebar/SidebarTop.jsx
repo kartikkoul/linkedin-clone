@@ -1,14 +1,11 @@
-import { Avatar, Card } from '@material-ui/core'
 import React from 'react'
-import classes from './Sidebar.module.css'
-import avatar from '../../assets/images/dummyAvatar.jpg'
-import banner from '../../assets/images/dummyBanner.jpg'
+import classes from './SidebarTop.module.css'
+import avatar from '../../../assets/images/dummyAvatar.jpg'
+import banner from '../../../assets/images/dummyBanner.jpg'
+import { Avatar } from '@material-ui/core'
 
-
-const Sidebar = () => {
+const SidebarTop = () => {
     return (
-        <div className={classes.sidebar}>
-            <Card className={classes.sidebarCard}>
                 <div className={classes.sidebarTop}>
                     <div className={classes.sidebarTop__SecOne}>
                         <div className={classes.banner}>
@@ -33,9 +30,7 @@ const Sidebar = () => {
                     </div>
                     <hr/>
                 </div>
-            </Card>
-        </div>
     )
 }
 
-export default Sidebar
+export default SidebarTop
