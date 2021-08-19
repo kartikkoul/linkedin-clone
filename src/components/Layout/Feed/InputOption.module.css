@@ -1,0 +1,26 @@
+.InputOption{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin: 10px;
+    width: 100%;
+    transition: 200ms;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.InputOption:hover{
+    background-color: #c2c2c24d;
+}
+
+.InputOption__icon{
+    color: rgb(109,108,108);
+}
+
+.InputOption__label{
+    color:rgb(109, 108, 108);
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 6px;
+}

@@ -6,19 +6,26 @@
     width: 99%;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .feed__InputContainer .inputArea{
-    padding: 10px;
+    padding-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 90%;
 }
 
-.feed__InputContainer .inputArea input{
-    width: 84%;
+.feed__InputContainer .inputArea form{
+    display: flex;
+    align-items: flex-start;
+    width: 88%;
+}
+
+.feed__InputContainer .inputArea>form>input{
+    width: 100%;
     height: 26px;
     outline: 0;
     border: 1px solid #afadad;
@@ -37,4 +44,11 @@
 .feed__InputContainer .inputArea .avatar{
     height: 50px;
     width: 50px;
+}
+
+.feed__InputContainer .inputWidgets{
+    display: flex;
+    width:90%;
+    align-items: center;
+    justify-content: space-between;
 }
