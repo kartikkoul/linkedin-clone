@@ -1,0 +1,40 @@
+.feed__InputContainer{
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 0px;
+    border: 0.1pt solid rgba(192, 191, 191, 0.589);
+    width: 99%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.feed__InputContainer .inputArea{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.feed__InputContainer .inputArea input{
+    width: 84%;
+    height: 26px;
+    outline: 0;
+    border: 1px solid #afadad;
+    display: flex;
+    padding: 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.feed__InputContainer .inputArea input:hover{
+    background-color: #c2c2c29f;
+}
+
+.feed__InputContainer .inputArea .avatar{
+    height: 50px;
+    width: 50px;
+}
