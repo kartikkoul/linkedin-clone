@@ -1,6 +1,8 @@
 .feed{
     display: flex;
     flex-direction: column;
+    padding-left: 18px;
+    padding-right: 18px;
     flex:0.5;
     margin-top: 2.7rem;
     overflow: hidden;

@@ -3,7 +3,7 @@ import classes from './SidebarBottom.module.css'
 import SidebarList from './SidebarList'
 
 const DUMMY_DATA = [
-    "dsa", "cpp", "reactjs", "nextjs", "webgl"
+    "kkwhocodes", "dsa", "cpp", "reactjs", "nextjs", "webgl"
 ]
 
 const SidebarBottom = () => {

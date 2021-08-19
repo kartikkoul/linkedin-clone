@@ -1,0 +1,13 @@
+.post__StatsIconOuter{
+    height: 18px;
+    width: 18px;
+    margin-right: 2px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post__StatsIconOuter .post__StatsIcon{
+    color: rgb(122, 122, 122);
+}

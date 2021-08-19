@@ -1,0 +1,106 @@
+.post__Card{
+    border-radius: 6px;
+    background-color: #fff;
+    border: 0.1pt solid rgba(192, 191, 191, 0.589);
+    margin-bottom: 6px;
+    width: 99%;
+}
+
+.post__Header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.post__Header .post__Avatar .postAvatarPic{
+    height: 60px;
+    width: 60px;
+}
+
+.post__AuthorInfo{
+    margin-left: 6px;
+}
+
+.post__AuthorInfo>p{
+    font-size: 14px;
+    margin: 2px;
+    color: #575757;
+}
+
+.post__AuthorInfo .post__Author{
+    color: #1f1e1e;
+    font-weight: 600;
+}
+
+.post__AuthorInfo .post__Author>span{
+    color: #575757;
+    font-weight: 400;
+}
+ 
+.post__AuthorInfo .post__Role{
+    font-size: 12px;
+}
+
+.post__Body{
+    padding: 10px;
+    padding-top: 0;
+}
+
+.post__Body>p{
+    font-size: 14px;
+}
+
+.post__Stats{
+    display: flex;
+    align-items: center;
+    padding-left:10px;
+}
+
+.post__Stats .post__StatNumbers{
+    display: flex;
+    align-items: center;
+}
+
+.post__Stats .post__StatNumbers>p{
+    font-size: 11px;
+    color: #575757;
+    margin-right: 4px;
+}
+
+.post__Card>hr{
+    width: 96%;
+    border: 0px;
+    border-bottom: 0.001cm solid rgba(179, 179, 179, 0.384);
+}
+
+.post__Actions{
+    display: flex;
+    padding-left: 10px;
+    padding-bottom: 4px;
+    width: 60%;
+}
+
+.post__Actions button{
+    background: none;
+    border:0;
+    width: 240px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    border-radius: 6px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.post__Actions button:hover{
+    background: #c2c2c24d;
+}
+
+.post__Actions button>p{
+    color: rgb(94, 93, 93);
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
