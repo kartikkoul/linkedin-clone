@@ -1,17 +1,35 @@
 import { Avatar } from '@material-ui/core'
-import React from 'react'
+import React, { useRef } from 'react'
 import classes from './FeedInputContainer.module.css'
 import avatar from '../../../assets/images/dummyAvatar.jpg'
 import InputOption from './InputOption'
 import { VideoLibrary, Image, Event, ArtTrack } from '@material-ui/icons'
+import { db } from '../../../firebase'
+import firebase from 'firebase'
 
 const FeedInputContainer = () => {
+    const postInputRef = useRef()
+
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        const postInput = postInputRef.current.value;
+
+        db.collection('posts').add({
+            name:"Kartik Koul",
+            role:"Software Developer",
+            content:postInput,
+            photoUrl:"",
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+    }
+
     return (
         <div className={classes.feed__InputContainer}>
             <div className={classes.inputArea}>
                 <Avatar className={classes.avatar} src={avatar}/>
-                <form>
-                    <input type="text" placeholder="Start a post"/>
+                <form onSubmit={submitHandler}>
+                    <input type="text" placeholder="Start a post" ref={postInputRef}/>
                 </form>
             </div>
             <div className={classes.inputWidgets}>
