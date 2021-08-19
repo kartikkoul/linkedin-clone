@@ -20,6 +20,7 @@ const SignUp = () => {
                 </p>
                 <button>Agree & Join</button>
             </form>
+            <p>Already on LinkedIn Clone? <a href="">Sign In</a></p>
         </div>
     )
 }

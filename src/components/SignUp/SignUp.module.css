@@ -57,3 +57,22 @@
 .signUp__inner button:hover{
     background-color: rgb(23, 38, 173);
 }
+
+.signUp__Card>p{
+    margin: 0ex;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.signUp__Card>p>a{
+    text-decoration: none;
+    color: rgb(29, 52, 250);
+    font-weight: bolder;
+    transition: 200ms;
+}
+
+.signUp__Card>p>a:hover{
+    color: rgb(95, 29, 250);
+    text-decoration: underline;
+}
