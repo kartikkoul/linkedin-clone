@@ -4,7 +4,7 @@ import classes from './InputOption.module.css'
 const InputOption = (props) => {
     return (
         <div className={classes.InputOption}>
-            {props.Icon && <props.Icon className={classes.InputOption__icon}/>}
+            {props.Icon && <props.Icon className={classes.InputOption__icon} style={{color:props.color}}/>}
             <p className={classes.InputOption__label}>{props.text}</p>
         </div>
     )

@@ -15,10 +15,10 @@ const FeedInputContainer = () => {
                 </form>
             </div>
             <div className={classes.inputWidgets}>
-                <InputOption Icon={Image} text="Photo"/>
-                <InputOption Icon={VideoLibrary} text="Video"/>
-                <InputOption Icon={Event} text="Video"/>
-                <InputOption Icon={ArtTrack} text="Write Article"/>
+                <InputOption Icon={Image} text="Photo" color="rgba(51, 172, 219, 0.671)"/>
+                <InputOption Icon={VideoLibrary} text="Video" color="rgba(44, 185, 44, 0.671)"/>
+                <InputOption Icon={Event} text="Video" color="rgba(223, 162, 8, 0.664)"/>
+                <InputOption Icon={ArtTrack} text="Write Article" color="rgba(248, 85, 112, 0.671)"/>
             </div>
         </div>
     )
