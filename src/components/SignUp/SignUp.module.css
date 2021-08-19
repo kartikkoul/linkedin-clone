@@ -1,0 +1,59 @@
+.signUp__Card{
+    width: 440px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.signUp__inner{
+    display: flex;
+    width: 90%;
+    height: 440px;
+    margin-left: 20px;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+.signUp__inner>p{
+    margin: 0px;
+    color: rgb(107, 107, 107);
+    font-size: 14px;
+}
+
+.signUp__inner>input{
+    outline: 0px;
+    border: 1px solid rgb(107, 107, 107);
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    height: 24px;
+}
+
+.signUp__inner>input:focus{
+    border: 1px solid rgb(61, 61, 61);
+}
+
+.signUp__inner .agreement{
+    font-size: 12px;
+    text-align: center;
+}
+
+.signUp__inner .agreement span{
+    font-weight: bolder;
+    color: rgb(29, 52, 250);
+}
+
+.signUp__inner button{
+    margin-top: 20px;
+    background-color: rgb(29, 52, 250);
+    border-radius: 30px;
+    border:0;
+    font-size: 14px;
+    color: #fff;
+    height: 42px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.signUp__inner button:hover{
+    background-color: rgb(23, 38, 173);
+}
