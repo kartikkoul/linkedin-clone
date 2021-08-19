@@ -7,6 +7,18 @@
     align-items: center;
 }
 
+.signupPage .brand{
+    display: flex;
+    align-items: flex-end;
+}
+
+.signupPage .brand>p{
+    margin:0;
+    font-size: 32px;
+    font-weight: bolder;
+    margin-left: -15px;
+}
+
 .signupPage>p{
     font-size: 33px;
 }
