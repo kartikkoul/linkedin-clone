@@ -63,6 +63,30 @@
     font-weight: 600;
 }
 
+.sidebarTop__SecThree{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sidebarTop__SecThree .myItems{
+    display: flex;
+    align-items: center;
+    width: 94%;
+}
+
+.sidebarTop__SecThree .myItems .myItemsIcon{
+    height: 18px;
+    width: 18px;
+    color: #585858;
+}
+
+.sidebarTop__SecThree p{
+    font-size: 11px;
+    margin-left: 6px;
+    font-weight: bold;
+}
+
 .sidebarTop hr{
     border: 0px;
     border-bottom: 0.001cm solid rgba(179, 179, 179, 0.384);

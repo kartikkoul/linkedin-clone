@@ -3,6 +3,7 @@ import classes from './SidebarTop.module.css'
 import avatar from '../../../assets/images/dummyAvatar.jpg'
 import banner from '../../../assets/images/dummyBanner.jpg'
 import { Avatar } from '@material-ui/core'
+import { Bookmark } from '@material-ui/icons'
 
 const SidebarTop = () => {
     return (
@@ -29,6 +30,12 @@ const SidebarTop = () => {
                         </div>
                     </div>
                     <hr/>
+                    <div className={classes.sidebarTop__SecThree}>
+                        <div className={classes.myItems}>
+                            <Bookmark className={classes.myItemsIcon}/>
+                            <p>My Items</p>
+                        </div>
+                    </div>
                 </div>
     )
 }

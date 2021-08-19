@@ -8,12 +8,12 @@ import SidebarTop from './SidebarTop'
 const Sidebar = () => {
     return (
         <div className={classes.sidebar}>
-            <Card className={classes.sidebarCard}>
+            <div className={classes.sidebarCard}>
                 <SidebarTop/>
-            </Card>
-            <Card className={`${classes.sidebarCard} ${classes.sidebarBottom}`}>
+            </div>
+            <div className={classes.sidebarCard}>
                 <SidebarBottom/>
-            </Card>
+            </div>
         </div>
     )
 }

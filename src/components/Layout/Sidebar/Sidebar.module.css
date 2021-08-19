@@ -1,8 +1,10 @@
 .sidebarCard{
     border-radius: 6px;
+    background-color: #fff;
     box-shadow: 0px 0px 0px 0px;
     border: 0.1pt solid rgba(192, 191, 191, 0.589);
     width: 99%;
+    margin-bottom: 6px;
 }
 
 .sidebar{
