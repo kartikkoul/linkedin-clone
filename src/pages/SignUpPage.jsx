@@ -1,8 +1,33 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import SignUp from '../components/Auth/SignUp'
+import { auth, db } from '../firebase'
+import { userAuthActions } from '../store/slices/userAuth'
 import classes from './SignUpPage.module.css'
 
 const SignUpPage = () => {
+
+    const user = useSelector((state)=>state.user)
+    const dispatch = useDispatch()
+
+    const signUp = async(email, password, fullName, headline, photo) =>{
+        auth.createUserWithEmailAndPassword(email, password).then(userCredential =>{
+            const user = userCredential.user;
+            if(user){
+                db.collection('userInfo').add({
+                    email:email,
+                    password:password,
+                    full_name:fullName,
+                    headline:headline,
+                    profile_picture:photo
+                })
+            }
+        }).catch(error=>{
+            const errorMessage = error.message;
+            console.log(errorMessage)
+        });
+    }
+
     return (
         <div className={classes.signupPage}>
             <div className={classes.brand}>
@@ -10,7 +35,7 @@ const SignUpPage = () => {
                  <p>Clone</p>
             </div>
             <p>Make the most of your professional life</p>
-            <SignUp />
+            <SignUp signUp={signUp}/>
         </div>
     )
 }

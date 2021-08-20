@@ -2,6 +2,8 @@
     width: 440px;
     background-color: #fff;
     border-radius: 6px;
+    position: absolute;
+    top: 11rem;
 }
 
 .signUp__inner{
@@ -11,12 +13,14 @@
     margin-left: 20px;
     margin-top: 20px;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .signUp__inner>p{
     margin: 0px;
     color: rgb(107, 107, 107);
     font-size: 14px;
+    pointer-events: none;
 }
 
 .signUp__inner>input{
@@ -32,9 +36,48 @@
     border: 1px solid rgb(61, 61, 61);
 }
 
+
+.signUp__inner .photoInputArea{
+    width: 36px;
+    height: 36px;
+    background-color: rgb(29, 52, 250);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 8.5rem;
+    margin-left: 1rem;
+    transition: 200ms;
+}
+
+.signUp__inner .photoInputArea:hover{
+    cursor: pointer;
+    background-color: rgb(22, 36, 160);
+}
+
+.signUp__inner .photoInputArea>label{
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.signUp__inner .photoInputArea>input{
+    pointer-events: '';
+    opacity: 0;
+    width:35px;
+    height:35px;
+}
+
 .signUp__inner .agreement{
     font-size: 12px;
     text-align: center;
+    padding-top: 3rem;
 }
 
 .signUp__inner .agreement span{
