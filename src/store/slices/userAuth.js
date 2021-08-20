@@ -15,7 +15,6 @@ const userAuth = createSlice({
     initialState:defaultState,
     reducers:{
         signIn:(state, action)=>{
-            console.log(state)
             const token = action.payload.token
             if(token){
                 state.token = token;
