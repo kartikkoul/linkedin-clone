@@ -1,0 +1,41 @@
+.signinPage{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signinPage .brand{
+    display: flex;
+    overflow: hidden;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    margin-right: 17rem;
+    margin-top: 25px;
+}
+
+.signinPage .brand>p{
+    margin:0;
+    font-size: 28px;
+    font-weight: bolder;
+    margin-left: -32px;
+}
+
+.signinPage .signUpParagraph{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 6rem;
+}
+
+.signinPage .signUpParagraph>a{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(29, 52, 250);;
+}
+
+.signUpParagraph>a:hover{
+    color: rgb(95, 29, 250);
+    text-decoration: underline;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import SignUp from '../components/SignUp/SignUp'
+import SignUp from '../components/Auth/SignUp'
 import classes from './SignUpPage.module.css'
 
 const SignUpPage = () => {
