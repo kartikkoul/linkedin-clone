@@ -5,6 +5,7 @@ import classes from './SignUp.module.css'
 
 const SignUp = (props) => {
     const [image, setImage] = useState(null)
+    const [overlayOpacity, setOverlayOpacity] = useState(0)
     const emailInputRef = useRef()
     const passInputRef = useRef()
     const fullNameInputRef = useRef()
@@ -35,11 +36,11 @@ const SignUp = (props) => {
                 <p>Headline</p>
                 <input type="text" ref={headlineInputRef}/>
                 <p>Profile Picture*</p>
-                {image && <img src={URL.createObjectURL(image)} />}
-                <div className={classes.photoInputArea}>
-                    <div className={classes.photo}>
-                        <label htmlFor="file"><img src={addProfilePictureImage}/></label>
+                <div className={classes.photoInputArea} >
+                    <div className={classes.photo} onMouseEnter={()=>setOverlayOpacity(1)} onMouseLeave={()=>setOverlayOpacity(0)}>
+                        <label htmlFor="file">{image?<img src={URL.createObjectURL(image)}/>:<img src={addProfilePictureImage}/>}</label>
                         <input type="file" id="file" accept="image/jpeg, image/png" className={classes.inputPhoto} onChange={imageChangeHandler}/>
+                        <div className={classes.overlay} style={{opacity:overlayOpacity}}></div>
                     </div>
                 </div>
                 <p className={classes.agreement}>

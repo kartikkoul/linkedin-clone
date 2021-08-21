@@ -57,9 +57,17 @@
     width: 100px;
 }
 
-.signUp__inner .photoInputArea .photo:hover{
-    
+.signUp__inner .photoInputArea .overlay{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    position: absolute;
+    margin-top: -100px;
+    background-color: rgba(22, 18, 18, 0.205);
+    transition: 300ms;
+    pointer-events: none;
 }
+
 
 .signUp__inner .photoInputArea .photo>label{
     font-size: 16px;
