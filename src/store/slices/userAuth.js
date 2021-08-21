@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { db } from "../../firebase";
 
 const defaultState = {
     token:null,
@@ -29,6 +30,43 @@ const userAuth = createSlice({
         },
     }
 })
+
+
+export const signIn = ( email, password ) =>{
+    return (dispatch) =>{
+            fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAimS1zR6jSolypkW4P269r8lvG5jDA_Ms',{
+            method:"POST",
+            body:JSON.stringify({
+                email:email,
+                password:password,
+                returnSecureToken:true
+            })
+        }).then(response=>{
+            if(response.ok){
+                return response.json().then(data=>{
+                    let userDetails;
+                    db.collection('userInfo').onSnapshot((snapshot)=> {
+                        const userInfo = snapshot.docs.find(docs=>docs.data().email===email)
+                        userDetails=userInfo.data()
+                    })
+                    dispatch(userAuthActions.signIn({
+                        token:data.idToken,
+                        userDetails:{
+                            fullName:userDetails.full_name,
+                            headline:userDetails.headline,
+                            avatar:userDetails.profile_picture
+                        }
+                    }))
+                    })
+            }
+            else{
+                throw new Error()
+            }
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+ }
 
 export const userAuthActions = userAuth.actions
 

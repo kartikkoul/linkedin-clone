@@ -3,46 +3,12 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import SignIn from '../components/Auth/SignIn'
 import { auth, db } from '../firebase'
-import userAuth, { userAuthActions } from '../store/slices/userAuth'
+import userAuth, { signIn, userAuthActions } from '../store/slices/userAuth'
 import classes from './SignInPage.module.css'
 
 const SignInPage = () => {
-    const [userDetails, setUserDetails] = useState({})
     const dispatch = useDispatch();
-
-    const signIn = ( email, password ) =>{
-       fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAimS1zR6jSolypkW4P269r8lvG5jDA_Ms',{
-           method:"POST",
-           body:JSON.stringify({
-               email:email,
-               password:password,
-               returnSecureToken:true
-           })
-       }).then(response=>{
-           if(response.ok){
-               return response.json().then(data=>{
-                    db.collection('userInfo').onSnapshot((snapshot)=> {
-                        const userInfo = snapshot.docs.find(docs=>docs.data().email===email)
-                        setUserDetails(userInfo.data())
-                    })
-                    dispatch(userAuthActions.signIn({
-                        token:data.idToken,
-                        userDetails:{
-                            fullName:userDetails.full_name,
-                            headline:userDetails.headline,
-                            avatar:userDetails.profile_picture
-                        }
-                    }))
-                    })
-           }
-           else{
-               throw new Error()
-           }
-       }).catch(err=>{
-           console.log(err)
-       })
-    }
-
+    const signIn = (email, password) => dispatch(signIn(email, password))
     return (
         <div className={classes.signinPage}>
             <div className={classes.brand}>

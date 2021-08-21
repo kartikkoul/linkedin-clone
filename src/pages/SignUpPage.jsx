@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SignUp from '../components/Auth/SignUp'
 import { auth, db } from '../firebase'
-import { userAuthActions } from '../store/slices/userAuth'
+import userAuth, { userAuthActions } from '../store/slices/userAuth'
 import classes from './SignUpPage.module.css'
 
 const SignUpPage = () => {
@@ -21,6 +21,7 @@ const SignUpPage = () => {
                     headline:headline,
                     profile_picture:photo
                 })
+                
             }
         }).catch(error=>{
             const errorMessage = error.message;
