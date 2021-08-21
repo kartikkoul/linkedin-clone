@@ -20,4 +20,6 @@
 .headerOption__avatar{
     height: 24px !important;
     width: 24px  !important;
+    border: 100%;
+    overflow:hidden;
 }

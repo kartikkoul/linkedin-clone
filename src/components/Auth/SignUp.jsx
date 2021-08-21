@@ -1,17 +1,26 @@
 import { AddToPhotos } from '@material-ui/icons'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+import addProfilePictureImage from "../../assets/images/addProfilePicture.png"
 import classes from './SignUp.module.css'
 
 const SignUp = (props) => {
+    const [image, setImage] = useState(null)
     const emailInputRef = useRef()
     const passInputRef = useRef()
     const fullNameInputRef = useRef()
     const headlineInputRef = useRef()
-    const photoInputRef = useRef()
+    const imageChangeHandler = (e) =>{
+        const imageInput = e.target.file
+        if(image===''||image===null||image===undefined){
+            alert("Not supported")
+            return
+        }
+        setImage(imageInput)
+    }
 
     const submitHandler = (e) =>{
         e.preventDefault();
-        props.signUp(emailInputRef.current.value, passInputRef.current.value, fullNameInputRef.current.value,headlineInputRef.current.value, photoInputRef.current.value)
+        props.signUp(emailInputRef.current.value, passInputRef.current.value, fullNameInputRef.current.value,headlineInputRef.current.value, image)
     }
 
     return (
@@ -25,10 +34,13 @@ const SignUp = (props) => {
                 <input type="text" ref={fullNameInputRef}/>
                 <p>Headline</p>
                 <input type="text" ref={headlineInputRef}/>
-                <p>Profile Picture</p>
+                <p>Profile Picture*</p>
+                {image && <img src={URL.createObjectURL(image)} />}
                 <div className={classes.photoInputArea}>
-                    <label><AddToPhotos/></label>
-                    <input type="file" className={classes.inputPhoto} ref={photoInputRef}/>
+                    <div className={classes.photo}>
+                        <label htmlFor="file"><img src={addProfilePictureImage}/></label>
+                        <input type="file" id="file" accept="image/jpeg, image/png" className={classes.inputPhoto} onChange={imageChangeHandler}/>
+                    </div>
                 </div>
                 <p className={classes.agreement}>
                     By clicking Agree & Join, you agree to the LinkedIn <span>User Agreement</span>,<span> Privacy Policy</span> and <span>Cookie Policy</span>.
