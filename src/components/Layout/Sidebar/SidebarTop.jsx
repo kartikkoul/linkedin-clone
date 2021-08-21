@@ -4,18 +4,22 @@ import avatar from '../../../assets/images/dummyAvatar.jpg'
 import banner from '../../../assets/images/dummyBanner.jpg'
 import { Avatar } from '@material-ui/core'
 import { Bookmark } from '@material-ui/icons'
+import { useSelector } from 'react-redux'
 
 const SidebarTop = () => {
+
+    const userDetails = useSelector(state=>state.user.userDetails)
+
     return (
                 <div className={classes.sidebarTop}>
                     <div className={classes.sidebarTop__SecOne}>
                         <div className={classes.banner}>
                             <img src={banner} alt="" srcset="" />
                         </div>
-                        <Avatar src={avatar} className={classes.avatar}/>
-                        <h4 className={classes.name}>Kartik Koul</h4>
+                        <Avatar src={userDetails.avatar} className={classes.avatar}/>
+                        <h4 className={classes.name}>{userDetails.fullName}</h4>
                         <p className={classes.headline}>
-                            Software Developer
+                            {userDetails.headline}
                         </p>
                     </div>
                     <hr/>

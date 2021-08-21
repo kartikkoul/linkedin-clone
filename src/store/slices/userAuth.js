@@ -44,19 +44,18 @@ export const signIn = ( email, password ) =>{
         }).then(response=>{
             if(response.ok){
                 return response.json().then(data=>{
-                    let userDetails;
                     db.collection('userInfo').onSnapshot((snapshot)=> {
                         const userInfo = snapshot.docs.find(docs=>docs.data().email===email)
-                        userDetails=userInfo.data()
+                        const {full_name, headline, profile_picture}=userInfo.data()
+                        dispatch(userAuthActions.signIn({
+                            token:data.idToken,
+                            userDetails:{
+                                fullName:full_name,
+                                headline:headline,
+                                avatar:profile_picture
+                            }
+                        }))
                     })
-                    dispatch(userAuthActions.signIn({
-                        token:data.idToken,
-                        userDetails:{
-                            fullName:userDetails.full_name,
-                            headline:userDetails.headline,
-                            avatar:userDetails.profile_picture
-                        }
-                    }))
                     })
             }
             else{

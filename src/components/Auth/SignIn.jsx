@@ -11,7 +11,7 @@ const SignIn = (props) => {
         const emailInput = emailInputRef.current.value
         const passInput = passInputRef.current.value
 
-        props.signIn(emailInput, passInput);
+        props.signInHandler(emailInput, passInput);
     }
 
     return (

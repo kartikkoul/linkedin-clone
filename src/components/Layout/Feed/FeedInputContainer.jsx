@@ -6,9 +6,11 @@ import InputOption from './InputOption'
 import { VideoLibrary, Image, Event, ArtTrack } from '@material-ui/icons'
 import { db } from '../../../firebase'
 import firebase from 'firebase'
+import { useSelector } from 'react-redux'
 
 const FeedInputContainer = () => {
     const postInputRef = useRef()
+    const userDetails = useSelector(state=>state.user.userDetails)
 
 
     const submitHandler = (e) => {
@@ -16,10 +18,10 @@ const FeedInputContainer = () => {
         const postInput = postInputRef.current.value;
 
         db.collection('posts').add({
-            name:"Kartik Koul",
-            role:"Software Developer",
+            name:userDetails.fullName,
+            role:userDetails.headline,
             content:postInput,
-            photoUrl:"",
+            photoUrl:userDetails.avatar,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
         postInputRef.current.value=""
@@ -28,7 +30,7 @@ const FeedInputContainer = () => {
     return (
         <div className={classes.feed__InputContainer}>
             <div className={classes.inputArea}>
-                <Avatar className={classes.avatar} src={avatar}/>
+                <Avatar className={classes.avatar} src={userDetails.avatar}/>
                 <form onSubmit={submitHandler}>
                     <input type="text" placeholder="Start a post" ref={postInputRef}/>
                 </form>
