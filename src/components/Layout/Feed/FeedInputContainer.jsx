@@ -30,7 +30,7 @@ const FeedInputContainer = () => {
     return (
         <div className={classes.feed__InputContainer}>
             <div className={classes.inputArea}>
-                <img className={classes.avatar} src={userDetails.avatar} alt={avatar}/>
+                <img className={classes.avatar} src={avatar} alt={userDetails.avatar}/>
                 <form onSubmit={submitHandler}>
                     <input type="text" placeholder="Start a post" ref={postInputRef}/>
                 </form>

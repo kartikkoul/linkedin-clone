@@ -44,6 +44,8 @@
 .feed__InputContainer .inputArea .avatar{
     height: 50px;
     width: 50px;
+    border-radius: 100%;
+    overflow: hidden;
 }
 
 .feed__InputContainer .inputWidgets{

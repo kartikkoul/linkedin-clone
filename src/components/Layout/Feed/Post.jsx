@@ -4,14 +4,16 @@ import PostStatsIcon from './PostStatsIcon'
 import classes from './Post.module.css'
 import { Avatar } from '@material-ui/core'
 import avatar from '../../../assets/images/dummyAvatar.png'
+import { useSelector } from 'react-redux'
 
 const Post = (props) => {
+    const userDetails = useSelector(state=>state.user.userDetails)
     console.log(props.post)
     return (
         <li key={props.id} className={classes.post__Card}>
             <div className={classes.post__Header}>
-                <div classes={classes.post__Avatar}>
-                    <img className={classes.postAvatarPic} src={avatar}/>
+                <div className={classes.post__Avatar}>
+                    <img className={classes.postAvatarPic} src={avatar} alt={userDetails.fullName}/>
                 </div>
                 <div className={classes.post__AuthorInfo}>
                     <p className={classes.post__Author}>{props.author}<span>• 3rd</span></p>

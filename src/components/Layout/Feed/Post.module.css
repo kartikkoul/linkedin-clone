@@ -14,9 +14,16 @@
     padding-bottom: 0;
 }
 
-.post__Header .post__Avatar .postAvatarPic{
-    height: 60px;
-    width: 60px;
+.post__Avatar{
+    height: 42px;
+    width: 42px;
+    overflow: hidden;
+}
+
+.post__Avatar>img{
+    height: 42px;
+    width: 42px;
+    overflow: hidden;
 }
 
 .post__AuthorInfo{
