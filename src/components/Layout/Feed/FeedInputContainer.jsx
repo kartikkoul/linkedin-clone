@@ -1,7 +1,7 @@
 import { Avatar } from '@material-ui/core'
 import React, { useRef } from 'react'
 import classes from './FeedInputContainer.module.css'
-import avatar from '../../../assets/images/dummyAvatar.jpg'
+import avatar from '../../../assets/images/dummyAvatar.png'
 import InputOption from './InputOption'
 import { VideoLibrary, Image, Event, ArtTrack } from '@material-ui/icons'
 import { db } from '../../../firebase'
@@ -30,7 +30,7 @@ const FeedInputContainer = () => {
     return (
         <div className={classes.feed__InputContainer}>
             <div className={classes.inputArea}>
-                <Avatar className={classes.avatar} src={userDetails.avatar}/>
+                <img className={classes.avatar} src={userDetails.avatar} alt={avatar}/>
                 <form onSubmit={submitHandler}>
                     <input type="text" placeholder="Start a post" ref={postInputRef}/>
                 </form>

@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './SidebarTop.module.css'
-import avatar from '../../../assets/images/dummyAvatar.jpg'
+import avatar from '../../../assets/images/dummyAvatar.png'
 import banner from '../../../assets/images/dummyBanner.jpg'
 import { Avatar } from '@material-ui/core'
 import { Bookmark } from '@material-ui/icons'
@@ -16,7 +16,7 @@ const SidebarTop = () => {
                         <div className={classes.banner}>
                             <img src={banner} alt="" srcset="" />
                         </div>
-                        <Avatar src={userDetails.avatar} className={classes.avatar}/>
+                        <img src={userDetails.avatar} className={classes.avatar} alt={avatar}/>
                         <h4 className={classes.name}>{userDetails.fullName}</h4>
                         <p className={classes.headline}>
                             {userDetails.headline}

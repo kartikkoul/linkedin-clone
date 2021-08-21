@@ -3,6 +3,7 @@ import React from 'react'
 import PostStatsIcon from './PostStatsIcon'
 import classes from './Post.module.css'
 import { Avatar } from '@material-ui/core'
+import avatar from '../../../assets/images/dummyAvatar.png'
 
 const Post = (props) => {
     console.log(props.post)
@@ -10,7 +11,7 @@ const Post = (props) => {
         <li key={props.id} className={classes.post__Card}>
             <div className={classes.post__Header}>
                 <div classes={classes.post__Avatar}>
-                    <Avatar className={classes.postAvatarPic}/>
+                    <img className={classes.postAvatarPic} src={avatar}/>
                 </div>
                 <div className={classes.post__AuthorInfo}>
                     <p className={classes.post__Author}>{props.author}<span>• 3rd</span></p>
