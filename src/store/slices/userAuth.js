@@ -26,10 +26,13 @@ const userAuth = createSlice({
             return state
         },
         signOut:(state)=>{
+            localStorage.removeItem("email")
+            localStorage.removeItem("password")
             return state = defaultState
         },
     }
 })
+
 
 
 export const signIn = ( email, password ) =>{
@@ -56,6 +59,8 @@ export const signIn = ( email, password ) =>{
                             }
                         }))
                     })
+                    localStorage.setItem("email", email)
+                    localStorage.setItem("password", password)
                     })
             }
             else{
