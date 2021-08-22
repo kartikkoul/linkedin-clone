@@ -4,15 +4,15 @@ import addProfilePictureImage from "../../assets/images/addProfilePicture.png"
 import classes from './SignUp.module.css'
 
 const SignUp = (props) => {
-    const [image, setImage] = useState(null)
+    const [image, setImage] = useState("")
     const [overlayOpacity, setOverlayOpacity] = useState(0)
     const emailInputRef = useRef()
     const passInputRef = useRef()
     const fullNameInputRef = useRef()
     const headlineInputRef = useRef()
     const imageChangeHandler = (e) =>{
-        const imageInput = e.target.file
-        if(image===''||image===null||image===undefined){
+        const imageInput = e.target.files[0]
+        if(imageInput===''||image===null||image===undefined){
             alert("Not supported")
             return
         }
@@ -21,7 +21,8 @@ const SignUp = (props) => {
 
     const submitHandler = (e) =>{
         e.preventDefault();
-        props.signUp(emailInputRef.current.value, passInputRef.current.value, fullNameInputRef.current.value,headlineInputRef.current.value, image)
+        const photoURL=image!==""&&image?URL.createObjectURL(image):""
+        props.signUp(emailInputRef.current.value, passInputRef.current.value, fullNameInputRef.current.value,headlineInputRef.current.value, photoURL)
     }
 
     return (
@@ -38,8 +39,8 @@ const SignUp = (props) => {
                 <p>Profile Picture*</p>
                 <div className={classes.photoInputArea} >
                     <div className={classes.photo} onMouseEnter={()=>setOverlayOpacity(1)} onMouseLeave={()=>setOverlayOpacity(0)}>
-                        <label htmlFor="file">{image?<img src={URL.createObjectURL(image)}/>:<img src={addProfilePictureImage}/>}</label>
-                        <input type="file" id="file" accept="image/jpeg, image/png" className={classes.inputPhoto} onChange={imageChangeHandler}/>
+                        <label htmlFor="file">{image!==""&&image?<img src={URL.createObjectURL(image)}/>:<img src={addProfilePictureImage}/>}</label>
+                        <input type="file" name="image" id="file" accept="image/jpeg, image/png" className={classes.inputPhoto} onChange={imageChangeHandler}/>
                         <div className={classes.overlay} style={{opacity:overlayOpacity}}></div>
                     </div>
                 </div>

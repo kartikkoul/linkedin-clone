@@ -17,7 +17,7 @@ const SidebarTop = () => {
                             <img src={banner} alt="" srcset="" />
                         </div>
                         <div className={classes.avatarArea}>
-                            <img src={avatar} className={classes.avatar} alt={userDetails.fullName}/>
+                            <img src={userDetails.avatar!==""?userDetails.avatar:avatar} className={classes.avatar} alt={userDetails.fullName}/>
                         </div>
                         <h4 className={classes.name}>{userDetails.fullName}</h4>
                         <p className={classes.headline}>
