@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { db } from "../../firebase";
+import { uiActions } from "./uiSlice";
 
 const defaultState = {
     token:null,
@@ -26,8 +27,10 @@ const userAuth = createSlice({
             return state
         },
         signOut:(state)=>{
-            localStorage.removeItem("email")
-            localStorage.removeItem("password")
+            localStorage.removeItem("token")
+            localStorage.removeItem("fullName")
+            localStorage.removeItem("headline")
+            localStorage.removeItem("avatar")
             return state = defaultState
         },
     }
@@ -46,6 +49,7 @@ export const signIn = ( email, password ) =>{
             })
         }).then(response=>{
             if(response.ok){
+                dispatch(uiActions.showError(null))
                 return response.json().then(data=>{
                     db.collection('userInfo').onSnapshot((snapshot)=> {
                         const userInfo = snapshot.docs.find(docs=>docs.data().email===email)
@@ -58,18 +62,27 @@ export const signIn = ( email, password ) =>{
                                 avatar:profile_picture
                             }
                         }))
+                        localStorage.setItem("token", data.idToken)
+                        localStorage.setItem("fullName", full_name)
+                        localStorage.setItem("headline", headline)
+                        localStorage.setItem("avatar", profile_picture)
                     })
-                    localStorage.setItem("email", email)
-                    localStorage.setItem("password", password)
+                    dispatch(uiActions.loadingAuth(false))
+
                     })
             }
             else{
-                throw new Error()
+                return (response.json().then(data=> {
+                    const errMessage = data.error.message
+                    throw new Error(errMessage) 
+                }))
             }
         }).catch(err=>{
-            console.log(err)
+            dispatch(uiActions.showError(err.message))
+            dispatch(uiActions.loadingAuth(false))
         })
     }
+
  }
 
 export const userAuthActions = userAuth.actions

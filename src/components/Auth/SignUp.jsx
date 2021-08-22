@@ -1,15 +1,20 @@
 import { AddToPhotos } from '@material-ui/icons'
 import React, { useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import addProfilePictureImage from "../../assets/images/addProfilePicture.png"
+import { uiActions } from '../../store/slices/uiSlice'
+import AuthLoader from '../Loaders'
 import classes from './SignUp.module.css'
 
 const SignUp = (props) => {
     const [image, setImage] = useState("")
+    const error = useSelector(state=>state.ui.error)
     const [overlayOpacity, setOverlayOpacity] = useState(0)
     const emailInputRef = useRef()
     const passInputRef = useRef()
     const fullNameInputRef = useRef()
     const headlineInputRef = useRef()
+    const dispatch = useDispatch()
     const imageChangeHandler = (e) =>{
         const imageInput = e.target.files[0]
         if(imageInput===''||image===null||image===undefined){
@@ -27,15 +32,18 @@ const SignUp = (props) => {
 
     return (
         <div className={classes.signUp__Card}>
+            <div className={`${classes.error} ${error?classes.showError:""}`}>
+                    <p>{error}</p>
+            </div>
             <form className={classes.signUp__inner} onSubmit={submitHandler}>
                 <p>Email</p>
                 <input type="email" ref={emailInputRef}/>
                 <p>Password</p>
                 <input type="password" ref={passInputRef}/>
                 <p>Full Name</p>
-                <input type="text" ref={fullNameInputRef}/>
+                <input type="text" ref={fullNameInputRef} required/>
                 <p>Headline</p>
-                <input type="text" ref={headlineInputRef}/>
+                <input type="text" ref={headlineInputRef} required/>
                 <p>Profile Picture*</p>
                 <div className={classes.photoInputArea} >
                     <div className={classes.photo} onMouseEnter={()=>setOverlayOpacity(1)} onMouseLeave={()=>setOverlayOpacity(0)}>

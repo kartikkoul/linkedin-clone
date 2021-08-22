@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SignUp from '../components/Auth/SignUp'
 import { auth, db } from '../firebase'
+import { uiActions } from '../store/slices/uiSlice'
 import userAuth, { signIn, userAuthActions } from '../store/slices/userAuth'
 import classes from './SignUpPage.module.css'
 
@@ -14,6 +15,7 @@ const SignUpPage = () => {
         auth.createUserWithEmailAndPassword(email, password).then(userCredential =>{
             const user = userCredential.user;
             if(user){
+                dispatch(uiActions.showError(null))
                 db.collection('userInfo').add({
                     email:email,
                     password:password,
@@ -23,10 +25,9 @@ const SignUpPage = () => {
                 })
                 dispatch(signIn(email, password))
             }
-        }).catch(error=>{
-            const errorMessage = error.message;
-            console.log(errorMessage)
-        });
+        }).catch(err=>
+            dispatch(uiActions.showError(err.message))
+        )
     }
 
     return (

@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Avatar } from '@material-ui/core'
 import { useDispatch, useSelector } from 'react-redux'
 import { userAuthActions } from '../../store/slices/userAuth'
+import { uiActions } from '../../store/slices/uiSlice'
 
 const HeaderOption = (props) => {
     const userDetails = useSelector(state=>state.user.userDetails)
@@ -22,7 +23,10 @@ const HeaderOption = (props) => {
                                     <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                                 </svg></div>}
                 {props.Avatar && <ul className={classes.meOptions} style={{visibility:style.optionsVisibility}}>
-                    <li onClick={()=>dispatch(userAuthActions.signOut())}>Sign Out</li>
+                    <li onClick={()=>{
+                        dispatch(uiActions.loadingAuth(false))
+                        dispatch(userAuthActions.signOut())
+                        }}>Sign Out</li>
                 </ul> }
             </div>
         

@@ -1,0 +1,25 @@
+.authLoader{
+    width: 100%;
+    height: 4px;
+    background:none;
+    position: relative;
+    overflow: hidden;
+}
+
+.authLoader::after{
+    content: '';
+    width: 98%;
+    height: 98%;
+    background-color: rgb(48, 67, 245);
+    position: absolute;
+    animation: load 300ms linear 1;
+}
+
+@keyframes load{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}

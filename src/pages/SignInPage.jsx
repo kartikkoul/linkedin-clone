@@ -3,12 +3,15 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import SignIn from '../components/Auth/SignIn'
 import { auth, db } from '../firebase'
+import { uiActions } from '../store/slices/uiSlice'
 import userAuth, { signIn, userAuthActions } from '../store/slices/userAuth'
 import classes from './SignInPage.module.css'
 
 const SignInPage = () => {
     const dispatch = useDispatch();
-    const signInHandler = (email, password) => dispatch(signIn(email, password))
+    const signInHandler = (email, password) => {
+        dispatch(signIn(email, password))
+    }
     return (
         <div className={classes.signinPage}>
             <div className={classes.brand}>

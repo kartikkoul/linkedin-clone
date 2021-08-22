@@ -3,14 +3,17 @@
     background-color: #fff;
     border-radius: 6px;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     top: 11rem;
 }
 
 .signUp__inner{
     display: flex;
     width: 90%;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     flex-direction: column;
     box-sizing: border-box;
 }
@@ -29,12 +32,35 @@
     margin-bottom: 15px;
     border-radius: 6px;
     height: 32px;
+    width:100%
 }
 
 .signUp__inner>input:focus{
     border: 1px solid rgb(61, 61, 61);
 }
 
+.signUp__Card .error{
+    width: 90%;
+    margin-top: 8px;
+    visibility: hidden;
+}
+
+.signUp__Card .showError{
+    visibility: visible;
+}
+
+.signUp__Card .error>p{
+    margin:0;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0.205);
+    border-radius: 6px;
+    font-size: 14px;
+    padding-left: 10px;
+    font-weight: bolder;
+    color: rgb(199, 15, 15);
+}
 
 .signUp__inner .photoInputArea{
     width: 100%;

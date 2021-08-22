@@ -4,6 +4,7 @@
     border-radius: 6px;
     position: absolute;
     top: 8rem;
+    overflow: hidden;
     box-shadow: 0px 0px 6px 1px #0a0a0a2d;
     box-sizing: border-box;
 }
@@ -20,7 +21,11 @@
 
 .signIn__Card .error{
     width: 90%;
-    display: none;
+    visibility: hidden;
+}
+
+.signIn__Card .showError{
+    visibility: visible;
 }
 
 .signIn__Card .error>p{

@@ -24,9 +24,8 @@
 }
 
 .signinPage .signUpParagraph{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 6rem;
+    position: relative;
+    margin-top: 30rem;
 }
 
 .signinPage .signUpParagraph>a{

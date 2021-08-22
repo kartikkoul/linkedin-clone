@@ -5,17 +5,26 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
-import { signIn } from './store/slices/userAuth';
+import { userAuthActions } from './store/slices/userAuth';
 
 function App() {
   const isAuthenticated = useSelector(state=>state.user.isAuthenticated)
   const dispatch = useDispatch()
+  const token = localStorage.getItem("token")
+  const fullName = localStorage.getItem("fullName")
+  const headline=localStorage.getItem("headline")
+  const avatar = localStorage.getItem("avatar")
+
 
   useEffect(()=>{
-    const email = localStorage.getItem("email")
-    const password = localStorage.getItem("password")
-    if(email && password){
-      dispatch(signIn(email, password))
+    if(token){
+      console.log("token exists")
+      const userDetails = {
+        fullName:fullName,
+        headline:headline,
+        avatar:avatar
+      };
+      dispatch(userAuthActions.signIn({token, userDetails}))
     }
   },[])
 
