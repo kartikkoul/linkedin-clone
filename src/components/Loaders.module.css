@@ -24,3 +24,34 @@
     }
 }
 
+.mainLoader{
+  justify-content: center;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  display:block;
+  width:100px;
+  border:0px;
+  height:3px;
+  border-radius: 24px;
+  background-color:white;
+}
+
+.mainLoader::before
+{
+  content:"";
+  display:block;
+  position:absolute;
+  background-color:rgb(48, 67, 245);
+  width:40px;
+  left:-20px;
+  height:10px;
+  animation: my 1s infinite ease;
+}
+
+@keyframes my
+{
+  50%{
+    left:75px;
+  }
+}

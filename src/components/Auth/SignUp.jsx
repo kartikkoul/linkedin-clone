@@ -1,6 +1,7 @@
 import { AddToPhotos } from '@material-ui/icons'
 import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import addProfilePictureImage from "../../assets/images/addProfilePicture.png"
 import classes from './SignUp.module.css'
 
@@ -55,7 +56,7 @@ const SignUp = (props) => {
                 </p>
                 <button type="submit">Agree & Join</button>
             </form>
-            <p>Already on LinkedIn Clone? <a href="">Sign In</a></p>
+            <p>Already on LinkedIn Clone? <Link to="/signin">Sign In</Link></p>
         </div>
     )
 }

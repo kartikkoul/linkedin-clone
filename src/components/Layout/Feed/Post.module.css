@@ -1,4 +1,5 @@
 .post__Card{
+    list-style: none;
     border-radius: 6px;
     background-color: #fff;
     border: 0.1pt solid rgba(192, 191, 191, 0.589);

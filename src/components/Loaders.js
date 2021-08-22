@@ -8,5 +8,12 @@ const AuthLoader = () => {
     )
 }
 
+export const MainLoader = () =>{
+    return (
+        <div className={classes.mainLoader}>
+            
+        </div>
+    )
+}
 
 export default AuthLoader

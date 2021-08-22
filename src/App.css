@@ -9,3 +9,26 @@
   flex-direction: row;
   width: 86%;
 }
+
+.centered{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered .brand{
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.centered .brand>p{
+  margin:0;
+  font-size: 32px;
+  font-weight: 800;
+  margin-left: -16px;
+}
