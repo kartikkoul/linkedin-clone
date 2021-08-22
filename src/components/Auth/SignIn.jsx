@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '../../store/slices/uiSlice';
@@ -8,9 +8,48 @@ import classes from './SignIn.module.css'
 const SignIn = (props) => {
     const isLoading = useSelector(state=>state.ui.authLoader)
     const error = useSelector(state=>state.ui.error)
+
+    const inputStyleAfter = {
+        height: "50%",
+        width: "90%",
+        marginTop: "10px"
+    }
+
+    const labelStyleAfter = {
+        fontSize: "14px",
+        color: "black",
+        marginBottom: "32px",
+    }
+    
+    const [emailinputStyle, setemailInputStyle]= useState(null)
+    const [emaillabelStyle, setemaillabelStyle] = useState(null)
+    const [passinputStyle, setpassInputStyle]= useState(null)
+    const [passlabelStyle, setpasslabelStyle] = useState(null)
+
+
     const emailInputRef = useRef();
     const passInputRef = useRef();
     const dispatch = useDispatch();
+
+    const emailBlurHandler = () =>{
+        if(emailInputRef.current.value.trim().length!==0){
+            setemailInputStyle(inputStyleAfter)
+            setemaillabelStyle(labelStyleAfter)
+            return
+        }
+        setemailInputStyle(null)
+        setemaillabelStyle(null)
+    }
+
+    const passBlurHandler = () =>{
+        if(passInputRef.current.value.trim().length!==0){
+            setpassInputStyle(inputStyleAfter)
+            setpasslabelStyle(labelStyleAfter)
+            return
+        }
+        setpassInputStyle(null)
+        setpasslabelStyle(null)
+    }
 
     const submitHandler = (e) =>{
         e.preventDefault()
@@ -33,13 +72,13 @@ const SignIn = (props) => {
                     <p>{error}</p>
             </div>
                 <div className={classes.emailInput} >
-                    <input type="email" ref={emailInputRef}/>
-                    <label>Email</label>
+                    <input type="email" ref={emailInputRef} onBlur={emailBlurHandler} style={emailinputStyle && emailinputStyle}/>
+                    <label style={emaillabelStyle && emaillabelStyle}>Email</label>
                 </div>
 
                 <div className={classes.passwordInput}>
-                    <input type="password" ref={passInputRef}/>
-                    <label>Password</label>
+                    <input type="password" ref={passInputRef} onBlur={passBlurHandler} style={passinputStyle && passinputStyle}/>
+                    <label style={passlabelStyle && passlabelStyle}>Password</label>
                 </div>
                 <button type="submit">Sign In</button>
             </form>

@@ -58,10 +58,10 @@
 }
 
 .signIn__inner .emailInput>label, .signIn__inner .passwordInput>label{
-    margin: 0px;
-    color: rgb(107, 107, 107);
-    font-size: 20px;
     position: absolute;
+    color: rgb(107, 107, 107);
+    margin: 0px;
+    font-size: 20px;
     width: 90%;
     pointer-events: none;
     transition: 200ms;
@@ -86,9 +86,9 @@
 .signIn__inner>.emailInput>input, .signIn__inner>.passwordInput>input{
     outline: 0px;
     border: 0;
+    border-radius: 6px;
     width: 100%;
     height: 95%;
-    border-radius: 6px;
     font-size: 20px;
 }
 
@@ -108,6 +108,7 @@
 .signIn__inner .passwordInput>input:focus~label{
     font-size: 14px;
     position: absolute;
+    color: black;
     margin-bottom: 32px;
 }
 

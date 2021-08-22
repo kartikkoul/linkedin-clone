@@ -2,8 +2,6 @@ import { AddToPhotos } from '@material-ui/icons'
 import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import addProfilePictureImage from "../../assets/images/addProfilePicture.png"
-import { uiActions } from '../../store/slices/uiSlice'
-import AuthLoader from '../Loaders'
 import classes from './SignUp.module.css'
 
 const SignUp = (props) => {
