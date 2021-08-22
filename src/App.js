@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
@@ -46,6 +47,9 @@ function App() {
             <Route path="/home" exact>
               {isAuthenticated && <HomePage/>}
               {!isAuthenticated && <Redirect to="/signin"/>}
+            </Route>
+            <Route path="*">
+              <Redirect to="/"/>
             </Route>
         </Switch>
     </React.Fragment>
