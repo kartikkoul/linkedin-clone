@@ -67,8 +67,6 @@ export const signIn = ( email, password ) =>{
                         localStorage.setItem("headline", headline)
                         localStorage.setItem("avatar", profile_picture)
                     })
-                    dispatch(uiActions.loadingAuth(false))
-
                     })
             }
             else{

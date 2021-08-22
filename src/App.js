@@ -29,24 +29,26 @@ function App() {
   },[])
 
   return (
-    <Switch>
-      <Route path="/" exact>
-        {isAuthenticated && <Redirect to="/home"/>}
-        {!isAuthenticated && <Redirect to="/signin"/>}
-      </Route>
-      <Route path="/signup" exact>
-        {!isAuthenticated && <SignUpPage/>}
-        {isAuthenticated && <Redirect to="/home"/>}
-      </Route>
-      <Route path="/signin">
-        {!isAuthenticated && <SignInPage/>}
-        {isAuthenticated && <Redirect to="/home"/>}
-      </Route>
-      <Route path="/home" exact>
-        {isAuthenticated && <HomePage/>}
-        {!isAuthenticated && <Redirect to="/signin"/>}
-      </Route>
-    </Switch>
+    <React.Fragment>
+        <Switch>
+            <Route path="/" exact>
+              {isAuthenticated && <Redirect to="/home"/>}
+              {!isAuthenticated && <Redirect to="/signin"/>}
+            </Route>
+            <Route path="/signup" exact>
+              {!isAuthenticated && <SignUpPage/>}
+              {isAuthenticated && <Redirect to="/home"/>}
+            </Route>
+            <Route path="/signin">
+              {!isAuthenticated && <SignInPage/>}
+              {isAuthenticated && <Redirect to="/home"/>}
+            </Route>
+            <Route path="/home" exact>
+              {isAuthenticated && <HomePage/>}
+              {!isAuthenticated && <Redirect to="/signin"/>}
+            </Route>
+        </Switch>
+    </React.Fragment>
     
   );
 }
