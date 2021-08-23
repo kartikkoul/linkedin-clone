@@ -1,4 +1,4 @@
-import { configureStore, createStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import uiSlice from "./slices/uiSlice";
 import userAuth from "./slices/userAuth";
 

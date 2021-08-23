@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className={classes.header}>
             <div className={classes.header__left}>
-                <img src={logo} className={classes.logo} />
+                <img src={logo} className={classes.logo} alt="LinkedIn Logo"/>
                 <div className={classes.header__search}>
                     <Search/>
                     <input type="text" placeholder="Search for jobs, skills and companies..."/>

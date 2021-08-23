@@ -1,4 +1,3 @@
-import { Avatar } from '@material-ui/core'
 import React, { useRef } from 'react'
 import classes from './FeedInputContainer.module.css'
 import avatar from '../../../assets/images/dummyAvatar.png'

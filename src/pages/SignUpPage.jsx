@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import SignUp from '../components/Auth/SignUp'
 import { auth, db, storage } from '../firebase'
 import { uiActions } from '../store/slices/uiSlice'

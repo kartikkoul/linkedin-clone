@@ -21,7 +21,6 @@ function App() {
 
   useEffect(()=>{
     if(token){
-      console.log("token exists")
       const userDetails = {
         fullName:fullName,
         headline:headline,
@@ -29,7 +28,7 @@ function App() {
       };
       dispatch(userAuthActions.signIn({token, userDetails}))
     }
-  },[])
+  },[fullName, headline, token])
 
   return (
     <React.Fragment>

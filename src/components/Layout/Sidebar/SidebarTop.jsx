@@ -2,7 +2,6 @@ import React from 'react'
 import classes from './SidebarTop.module.css'
 import avatar from '../../../assets/images/dummyAvatar.png'
 import banner from '../../../assets/images/dummyBanner.jpg'
-import { Avatar } from '@material-ui/core'
 import { Bookmark } from '@material-ui/icons'
 import { useSelector } from 'react-redux'
 

@@ -2,7 +2,6 @@ import { ChatBubbleOutline, Favorite, Share, Telegram, ThumbUpAlt } from '@mater
 import React from 'react'
 import PostStatsIcon from './PostStatsIcon'
 import classes from './Post.module.css'
-import { Avatar } from '@material-ui/core'
 import avatar from '../../../assets/images/dummyAvatar.png'
 import { useSelector } from 'react-redux'
 

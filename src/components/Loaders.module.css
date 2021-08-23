@@ -34,7 +34,7 @@
   border:0px;
   height:3px;
   border-radius: 24px;
-  background-color:white;
+  background-color:rgba(80, 80, 80, 0.24);
 }
 
 .mainLoader::before

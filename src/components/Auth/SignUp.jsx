@@ -1,4 +1,3 @@
-import { AddToPhotos } from '@material-ui/icons'
 import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -49,7 +48,7 @@ const SignUp = (props) => {
                 <p>Profile Picture*</p>
                 <div className={classes.photoInputArea} >
                     <div className={classes.photo} onMouseEnter={()=>setOverlayOpacity(1)} onMouseLeave={()=>setOverlayOpacity(0)}>
-                        <label htmlFor="file">{image!==""&&image?<img src={URL.createObjectURL(image)}/>:<img src={addProfilePictureImage}/>}</label>
+                        <label htmlFor="file">{image!==""&&image?<img src={URL.createObjectURL(image)} alt="File Added"/>:<img src={addProfilePictureImage} alt="Choose a file"/>}</label>
                         <input type="file" name="image" id="file" accept="image/jpeg, image/png" className={classes.inputPhoto} onChange={imageChangeHandler}/>
                         <div className={classes.overlay} style={{opacity:overlayOpacity}}></div>
                     </div>
