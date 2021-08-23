@@ -1,0 +1,76 @@
+.newsArea{
+    display: flex;
+    flex:0.3;
+}
+
+.newsCard{
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0px 0px 0px 0px;
+    border: 0.1pt solid rgba(192, 191, 191, 0.589);
+    width: 99%;
+    height: max-content;
+    overflow: hidden;
+    margin-top: 2.7rem;
+    padding-bottom: 15px;
+}
+
+
+.newsCard .title{
+    display: flex;
+    margin-top: 15px;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5%;
+}
+
+.newsCard .title>p{
+    margin:0;
+    font-size: 18px;
+    font-weight: 600;
+}
+.newsCard .title>svg{
+    height: 18px;
+    width: 18px;
+    color: rgb(112, 112, 112);
+}
+
+.newsItem{
+    width: 100%;
+    padding: 2px;
+    transition: 200ms;
+}
+
+.newsItem .headline{
+    display: flex;
+    width: 100%;
+    font-size: 13px;
+    
+    align-items: center;
+}
+
+.newsItem .headline>h3{
+    width: 80%;
+    font-weight: 600;
+    color: rgb(29, 29, 29);
+}
+
+.newsItem .headline>svg{
+    height: 36px;
+    width: 36px;
+    color: rgb(112, 112, 112);
+}
+
+.newsItem .stats{
+    display: flex;
+    width: 100%;
+    margin-left: 34px;
+    margin-top: -15px;
+}
+.newsItem .stats>p{
+    margin: 0;
+    font-size: 12px;
+    margin-left: 4px;
+    color: rgb(112, 112, 112);
+}
