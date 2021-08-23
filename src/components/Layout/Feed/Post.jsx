@@ -12,7 +12,7 @@ const Post = (props) => {
         <li key={props.id} className={classes.post__Card}>
             <div className={classes.post__Header}>
                 <div className={classes.post__Avatar}>
-                    <img className={classes.postAvatarPic} src={props.photoURL!==""?props.photoURL:avatar} alt={userDetails.fullName}/>
+                    <img className={classes.postAvatarPic} src={props.photoUrl!==""?props.photoUrl:avatar} alt={userDetails.fullName}/>
                 </div>
                 <div className={classes.post__AuthorInfo}>
                     <p className={classes.post__Author}>{props.author}<span>• 3rd</span></p>

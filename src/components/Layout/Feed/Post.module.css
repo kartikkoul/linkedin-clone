@@ -18,12 +18,14 @@
 .post__Avatar{
     height: 42px;
     width: 42px;
+    border-radius: 100%;
     overflow: hidden;
 }
 
 .post__Avatar>img{
     height: 42px;
     width: 42px;
+    border-radius: 100%;
     overflow: hidden;
 }
 
