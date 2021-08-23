@@ -1,7 +1,6 @@
 .newsArea{
-    position: fixed;
-    width: 26%;
-    margin-left: 62.4%;
+    display: flex;
+    width: 28%;
 }
 
 .newsCard{
@@ -47,12 +46,11 @@
     display: flex;
     width: 100%;
     font-size: 13px;
-    
     align-items: center;
 }
 
 .newsItem .headline>h3{
-    width: 80%;
+    width: 85%;
     font-weight: 600;
     color: rgb(29, 29, 29);
 }
