@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SignUp from '../components/Auth/SignUp'
-import { auth, db } from '../firebase'
+import { auth, db, storage } from '../firebase'
 import { uiActions } from '../store/slices/uiSlice'
 import userAuth, { signIn, userAuthActions } from '../store/slices/userAuth'
 import classes from './SignUpPage.module.css'
@@ -15,15 +15,34 @@ const SignUpPage = () => {
         auth.createUserWithEmailAndPassword(email, password).then(userCredential =>{
             const user = userCredential.user;
             if(user){
-                dispatch(uiActions.showError(null))
-                db.collection('userInfo').add({
-                    email:email,
-                    password:password,
-                    full_name:fullName,
-                    headline:headline,
-                    profile_picture:photo
-                })
-                dispatch(signIn(email, password))
+                let photoURL="";
+                let greenCard=false;
+                if(photo!==""&&photo!==undefined&&photo!==null){
+                    const uploadTask = storage.ref().child('profilePictures/' + photo.name).put(photo);
+                    uploadTask.on('state_changed', 
+                        () => {}, 
+                        (error) => {
+                            dispatch(uiActions.showError(error))
+                            return
+                        }, 
+                        () => {
+                            uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                                photoURL=downloadURL
+                            });
+                            greenCard=true
+                        }
+                        );
+                }
+                if(greenCard===true){
+                    db.collection('userInfo').add({
+                        email:email,
+                        password:password,
+                        full_name:fullName,
+                        headline:headline,
+                        profile_picture:photoURL
+                    })
+                    dispatch(signIn(email, password))
+                }
             }
         }).catch(err=>
             dispatch(uiActions.showError(err.message))

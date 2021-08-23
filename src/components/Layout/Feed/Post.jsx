@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux'
 
 const Post = (props) => {
     const userDetails = useSelector(state=>state.user.userDetails)
-    console.log(props.post)
     return (
         <li key={props.id} className={classes.post__Card}>
             <div className={classes.post__Header}>

@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import addProfilePictureImage from "../../assets/images/addProfilePicture.png"
+import { uiActions } from '../../store/slices/uiSlice'
 import classes from './SignUp.module.css'
 
 const SignUp = (props) => {
@@ -17,7 +18,7 @@ const SignUp = (props) => {
     const imageChangeHandler = (e) =>{
         const imageInput = e.target.files[0]
         if(imageInput===''||image===null||image===undefined){
-            alert("Not supported")
+            dispatch(uiActions.showError("Image not supported. Please try JPEG/PNG files only."))
             return
         }
         setImage(imageInput)
@@ -25,8 +26,8 @@ const SignUp = (props) => {
 
     const submitHandler = (e) =>{
         e.preventDefault();
-        const photoURL=image!==""&&image?URL.createObjectURL(image):""
-        props.signUp(emailInputRef.current.value, passInputRef.current.value, fullNameInputRef.current.value,headlineInputRef.current.value, photoURL)
+        const imageUpload= image!==""&&image?image:""
+        props.signUp(emailInputRef.current.value, passInputRef.current.value, fullNameInputRef.current.value,headlineInputRef.current.value, imageUpload)
     }
 
     return (
