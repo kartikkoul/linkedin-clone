@@ -15,6 +15,8 @@ const SignUp = (props) => {
     const fullNameInputRef = useRef()
     const headlineInputRef = useRef()
     const dispatch = useDispatch()
+    
+
     const imageChangeHandler = (e) =>{
         const imageInput = e.target.files[0]
         if(imageInput===''||image===null||image===undefined){
@@ -57,7 +59,7 @@ const SignUp = (props) => {
                 </p>
                 <button type="submit">Agree & Join</button>
             </form>
-            <p>Already on LinkedIn Clone? <Link to="/signin">Sign In</Link></p>
+            <p>Already on LinkedIn Clone? <Link to="/signin" onClick={()=>dispatch(uiActions.showError(false))}>Sign In</Link></p>
         </div>
     )
 }

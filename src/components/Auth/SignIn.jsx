@@ -8,6 +8,7 @@ import classes from './SignIn.module.css'
 const SignIn = (props) => {
     const isLoading = useSelector(state=>state.ui.authLoader)
     const error = useSelector(state=>state.ui.error)
+    const dispatch = useDispatch();
 
     const inputStyleAfter = {
         height: "50%",
@@ -29,7 +30,7 @@ const SignIn = (props) => {
 
     const emailInputRef = useRef();
     const passInputRef = useRef();
-    const dispatch = useDispatch();
+ 
 
     const emailBlurHandler = () =>{
         if(emailInputRef.current.value.trim().length!==0){

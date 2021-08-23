@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import SignIn from '../components/Auth/SignIn'
+import { uiActions } from '../store/slices/uiSlice'
 import { signIn } from '../store/slices/userAuth'
 import classes from './SignInPage.module.css'
 
@@ -18,7 +19,7 @@ const SignInPage = () => {
             </div>
             <SignIn signInHandler={signInHandler}/>
             <div className={classes.signUpParagraph}>
-                New to LinkedIn Clone? <Link to="/signup">Join Now</Link>
+                New to LinkedIn Clone? <Link to="/signup" onClick={()=>dispatch(uiActions.showError(false))}>Join Now</Link>
             </div>
         </div>
     )
