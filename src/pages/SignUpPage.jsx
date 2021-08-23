@@ -1,47 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SignUp from '../components/Auth/SignUp'
 import { auth, db, storage } from '../firebase'
 import { uiActions } from '../store/slices/uiSlice'
-import userAuth, { signIn, userAuthActions } from '../store/slices/userAuth'
+import { signIn } from '../store/slices/userAuth'
 import classes from './SignUpPage.module.css'
 
 const SignUpPage = () => {
-
-    const user = useSelector((state)=>state.user)
     const dispatch = useDispatch()
 
     const signUp = async(email, password, fullName, headline, photo) =>{
         auth.createUserWithEmailAndPassword(email, password).then(userCredential =>{
             const user = userCredential.user;
             if(user){
-                let photoURL="";
-                let greenCard=false;
                 if(photo!==""&&photo!==undefined&&photo!==null){
                     const uploadTask = storage.ref().child('profilePictures/' + photo.name).put(photo);
                     uploadTask.on('state_changed', 
-                        () => {}, 
+                        (snapshot) => {
+                            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                            console.log(progress)
+                        }, 
                         (error) => {
                             dispatch(uiActions.showError(error))
                             return
                         }, 
                         () => {
                             uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-                                photoURL=downloadURL
-                            });
-                            greenCard=true
+                                db.collection('userInfo').add({
+                                            email:email,
+                                            password:password,
+                                            full_name:fullName,
+                                            headline:headline,
+                                            profile_picture:downloadURL
+                                        })
+                                dispatch(signIn(email, password))  
+                            }).catch(err=>alert(err))
                         }
-                        );
+                        ); 
                 }
-                if(greenCard===true){
-                    db.collection('userInfo').add({
-                        email:email,
-                        password:password,
-                        full_name:fullName,
-                        headline:headline,
-                        profile_picture:photoURL
-                    })
-                    dispatch(signIn(email, password))
+                else{
+                        db.collection('userInfo').add({
+                                    email:email,
+                                    password:password,
+                                    full_name:fullName,
+                                    headline:headline,
+                                    profile_picture:""
+                                })
+                        dispatch(signIn(email, password)) 
                 }
             }
         }).catch(err=>

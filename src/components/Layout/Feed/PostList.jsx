@@ -28,7 +28,7 @@ const PostList = () => {
 
     return (
         <ul className={classes.postList}>
-            {isLoading?<CircularProgress style={{color:"rgb(29, 52, 250)"}}/>:posts.map(({id, data:{ name, content, role, photoUrl}})=><Post id={id} author={name} role={role} content={content}/>)}
+            {isLoading?<CircularProgress style={{color:"rgb(29, 52, 250)"}}/>:posts.map(({id, data:{ name, content, role, photoUrl}})=><Post id={id} author={name} role={role} content={content} photoUrl={photoUrl}/>)}
         </ul>
     )
 }
