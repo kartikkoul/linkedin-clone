@@ -1,5 +1,7 @@
 .newsArea{
-    display: fixed;
+    position: fixed;
+    width: 26%;
+    margin-left: 62.4%;
 }
 
 .newsCard{
