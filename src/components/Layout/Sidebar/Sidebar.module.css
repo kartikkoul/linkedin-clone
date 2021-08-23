@@ -11,9 +11,13 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    flex:0.2;
-    margin-top: 2.7rem;
+    margin-top: 2.812rem;
     overflow: hidden;
+}
+
+.sidebar{
+    position: fixed;
+    width: 16.4%;
 }
 
 .sidebarBottom{
